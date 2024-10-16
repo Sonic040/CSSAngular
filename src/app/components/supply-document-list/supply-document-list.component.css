@@ -1,0 +1,63 @@
+.supply-document-list {
+    max-width: 900px; /* Set maximum width */
+    margin: 20px auto; /* Center the component */
+    padding: 20px; /* Padding around the component */
+    background-color: #f4f1fc; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h2 {
+    text-align: center; /* Center the heading */
+    color: #6750a4; /* Heading color */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+button {
+    background-color: #6750a4; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove borders */
+    padding: 10px 15px; /* Button padding */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    margin-right: 10px; /* Space between buttons */
+}
+
+button:hover {
+    background-color: #5c4f9e; /* Darker color on hover */
+}
+
+table {
+    width: 100%; /* Full width table */
+    border-collapse: collapse; /* Remove gaps between table borders */
+    margin-top: 20px; /* Space above table */
+    text-align: left; /* Left-align text */
+}
+
+th, td {
+    padding: 12px 15px; /* Padding inside cells */
+    border: 1px solid #ccc; /* Light gray borders */
+}
+
+th {
+    background-color: #6750a4; /* Header background color */
+    color: white; /* Header text color */
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9; /* Light gray background on row hover */
+}
+
+tbody td button {
+    background-color: #d9534f; /* Delete button background */
+    color: white; /* Delete button text color */
+    border: none; /* Remove button borders */
+    padding: 8px 10px; /* Button padding */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+tbody td button:hover {
+    background-color: #c9302c; /* Darker red on hover */
+}

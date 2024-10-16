@@ -1,0 +1,23 @@
+<div class="login-container">
+    <form [formGroup]="loginForm" (ngSubmit)="Login()" class="example-form">
+      <h2>تسجيل الدخول</h2>
+      <div>
+        <label>اسم المستخدم : </label>
+        <input formControlName="username" type="text">
+        <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+          اسم المستخدم مطلوب
+        </div>
+      </div>
+      <div>
+        <label>كلمة المرور : </label>
+        <input formControlName="password" type="password">
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          كلمة المرور مطلوبة
+        </div>
+      </div>
+      <button type="submit">دخول</button>
+      <div *ngIf="errorMessage" class="error">
+        {{ errorMessage }}
+      </div>
+    </form>
+  </div>

@@ -1,0 +1,30 @@
+<div class="add-warehouse">
+    <h2>إضافة مخزن جديد</h2>
+    <form [formGroup]="warehouseForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label>اسم المخزن</label>
+        <input formControlName="warehouseName" type="text">
+        <div *ngIf="warehouseForm.get('warehouseName')?.invalid && warehouseForm.get('warehouseName')?.touched">
+          اسم المخزن مطلوب وفريد
+        </div>
+      </div>
+      <div>
+        <label>وصف المخزن</label>
+        <textarea formControlName="warehouseDescription"></textarea>
+      </div>
+      <div formArrayName="items">
+        <div *ngFor="let item of items.controls; let i = index" [formGroupName]="i" class="item-group">
+          <h4>عنصر {{i + 1}}</h4>
+          <label>اسم العنصر</label>
+          <input formControlName="itemName" type="text">
+          <label>وصف العنصر</label>
+          <textarea formControlName="itemDescription"></textarea>
+          <label>الكمية</label>
+          <input formControlName="quantity" type="number">
+          <button type="button" (click)="removeItem(i)">حذف عنصر</button>
+        </div>
+      </div>
+      <button type="button" (click)="addItem()">إضافة عنصر</button>
+      <button type="submit" [disabled]="warehouseForm.invalid">حفظ المخزن</button>
+    </form>
+  </div>

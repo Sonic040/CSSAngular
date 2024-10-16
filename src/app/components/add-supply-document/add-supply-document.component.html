@@ -1,0 +1,33 @@
+<div class="add-supply-document">
+    <h2>إضافة مستند توريد جديد</h2>
+    <form [formGroup]="supplyDocumentForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label>اسم المستند</label>
+        <input formControlName="documentname" type="text">
+        <div *ngIf="supplyDocumentForm.get('documentName')?.invalid && supplyDocumentForm.get('documentName')?.touched">
+          اسم المستند مطلوب
+        </div>
+      </div>
+      <div>
+        <label>موضوع المستند</label>
+        <input formControlName="documentsubject" type="text">
+        <div *ngIf="supplyDocumentForm.get('documentSubject')?.invalid && supplyDocumentForm.get('documentSubject')?.touched">
+          موضوع المستند مطلوب
+        </div>
+      </div>
+      <div>
+        <label>اختر المخزن</label>
+        <select formControlName="warehouseId" (change)="onWarehouseChange($event)">
+          <option value="">اختر مخزن</option>
+          <option *ngFor="let warehouse of warehouses" [value]="warehouse.warehouseId">
+            {{ warehouse.warehouseName }}
+          </option>
+        </select>
+        <div *ngIf="supplyDocumentForm.get('warehouseId')?.invalid && supplyDocumentForm.get('warehouseId')?.touched">
+          اختيار المخزن مطلوب
+        </div>
+      </div>
+      <button type="submit" [disabled]="supplyDocumentForm.invalid">إضافة مستند توريد</button>
+    </form>
+    <a routerLink="/supplydocument">العودة إلى قائمة المستندات</a>
+  </div>

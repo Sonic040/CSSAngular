@@ -1,0 +1,84 @@
+.add-warehouse {
+    max-width: 600px; /* Set a maximum width for the form */
+    margin: 20px auto; /* Center the form horizontally */
+    padding: 20px; /* Add padding around the form */
+    border: 1px solid #6750a4; /* Add a border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f4f1fc; /* Background color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+h2 {
+    text-align: center; /* Center the title */
+    color: #6750a4; /* Title color */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+label {
+    display: block; /* Labels occupy full width */
+    margin-bottom: 5px; /* Space between label and input */
+    color: #333; /* Dark color for labels */
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: calc(100% - 22px); /* Full width inputs minus padding and border */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Slightly rounded corners */
+    margin-bottom: 15px; /* Space below inputs */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: #6750a4; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 80px; /* Set a minimum height */
+}
+
+.item-group {
+    margin-bottom: 20px; /* Space between item groups */
+    padding: 15px; /* Padding inside item groups */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fff; /* White background for item groups */
+}
+
+.item-group h4 {
+    margin: 0 0 10px; /* Space below item group title */
+    color: #6750a4; /* Title color */
+}
+
+button {
+    background-color: #6750a4; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove default border */
+    padding: 10px 15px; /* Button padding */
+    margin: 3px ;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+button:hover {
+    background-color: #5c4f9e; /* Darken the button on hover */
+}
+
+button[disabled] {
+    background-color: #ccc; /* Gray background for disabled buttons */
+    cursor: not-allowed; /* Not-allowed cursor for disabled buttons */
+}
+
+.error-message {
+    color: red; /* Red color for error messages */
+    margin-top: 5px; /* Space above error messages */
+}

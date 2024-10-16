@@ -1,0 +1,34 @@
+<div class="supply-document-list">
+    <h2>مستندات التوريد</h2>
+    <button (click)="addSupplyDocument()">إضافة مستند توريد</button>
+    <button (click)="exportToExcel()">تصدير إلى Excel</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>اسم المستند</th>
+          <th>موضوع المستند</th>
+          <th>معرف المخزن</th>
+          <th>معرف العنصر</th>
+          <th>تم الإنشاء بواسطة</th>
+          <th>تاريخ ووقت الإنشاء</th>
+          <th>الحالة</th>
+          <th>إجراءات</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doc of supplyDocuments">
+          <td>{{ doc.documentName }}</td>
+          <td>{{ doc.documentSubject }}</td>
+          <td>{{ doc.warehouseId }}</td>
+          <td>{{ doc.itemId }}</td>
+          <td>{{ doc.createdBy }}</td>
+          <td>{{ doc.createdAt | date:'short' }}</td>
+          <td>{{ doc.status }}</td>
+          <td>
+         <button (click)="deleteSupplyDocument(doc.supplyDocumentId)">حذف</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

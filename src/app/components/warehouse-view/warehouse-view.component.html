@@ -1,0 +1,29 @@
+<!-- warehouse-view.component.html -->
+<div class="warehouse-view">
+    <h2>عرض المخازن</h2>
+    <button (click)="addWarehouse()">إضافة مخزن</button>
+    <button (click)="exportToExcel()">تصدير إلى Excel</button>
+    <button (click)="supply()">المستندات</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>اسم المخزن</th>
+          <th>وصف المخزن</th>
+          <th>تاريخ ووقت الإنشاء</th>
+          <th>عرض العناصر</th>
+          <th>إجراءات</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let warehouse of warehouses">
+          <td>{{ warehouse.warehouseName }}</td>
+          <td>{{ warehouse.warehouseDescription }}</td>
+          <td>{{ warehouse.createdAt | date:'short' }}</td>
+          <td><button (click)="viewItems(warehouse.warehouseId)">عرض</button></td>
+          <td><button (click)="deletewarehouse(warehouse.warehouseId)">حذف</button></td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
